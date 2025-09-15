@@ -6,9 +6,9 @@ export type Aula = {
 };
 
 export async function fetchAulas(): Promise<Aula[]> {
-  const res = await fetch(`${process.env.GOOGLE_CLIENT_ID}/api/v1/classes`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/classes`, {
     headers: {
-      "X-Admin-Token": `${process.env.ADMIN_TOKEN}`,
+      "X-Admin-Token": `${process.env.NEXT_PUBLIC_ADMIN_TOKEN}`,
     },
     cache: "no-store",
   });
