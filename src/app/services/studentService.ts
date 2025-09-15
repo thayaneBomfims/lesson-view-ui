@@ -1,4 +1,4 @@
-export async function fetchStudent(email: string): Promise<any> {
+export async function fetchStudent(email: string) {
     const res = await fetch(`${process.env.GOOGLE_CLIENT_ID}/api/v1/students?email=${email}`, {
         headers: {
             "X-Admin-Token": `${process.env.ADMIN_TOKEN}`,
@@ -11,7 +11,7 @@ export async function fetchStudent(email: string): Promise<any> {
     return data[0];
 }
 
-export async function fetchStudentById(user_id: string): Promise<any> {
+export async function fetchStudentById(user_id: string) {
     const res = await fetch(`${process.env.GOOGLE_CLIENT_ID}/api/v1/students/${user_id}`, {
         headers: {
             "X-Admin-Token": `${process.env.ADMIN_TOKEN}`,

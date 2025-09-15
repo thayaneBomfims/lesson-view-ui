@@ -53,7 +53,7 @@ export default function Home() {
                         <a href="#horarios" className="hover:underline">Horários</a>
                         <a href="#canal" className="hover:underline">Canal no Youtube</a>
                         <a href="#canal" className="hover:underline">Contatos</a>
-                        <a href="/" className="hover:underline"
+                        <a className="hover:underline"
                             onClick={() => window.location.href = "/"}
                         >Mais serviços</a>
 
@@ -147,7 +147,7 @@ export default function Home() {
                         </p>
                         <br />
                         <p>
-                            Não temos aulas gravadas e não aplicamos o método "copia e cola", ou seja, você aprende fazendo e ao vivo!
+                            Não temos aulas gravadas e não aplicamos o método copia e cola, ou seja, você aprende fazendo e ao vivo!
                         </p>
                         <br />
                         <blockquote className="border-l-4 border-[var(--accent)] pl-4 italic mt-4 text-gray-200">

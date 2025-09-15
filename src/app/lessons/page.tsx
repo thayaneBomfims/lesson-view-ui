@@ -79,10 +79,7 @@ export default function MinhaAula() {
                     if (!student.googleCode && session.user.googleId) {
                         student = await updateStudentGoogleCode(student.id, session.user.googleId);
                     }
-
-
-                    let studentUpdated = await fetchStudentById(student.id);
-                    console.log('aluno', studentUpdated);
+                    const studentUpdated = await fetchStudentById(student.id);
 
                     setAluno(studentUpdated);
                 } catch (err) {

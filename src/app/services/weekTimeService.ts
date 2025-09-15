@@ -14,7 +14,7 @@ export async function fetchHorarios(): Promise<Horario[]> {
     if (!res.ok) throw new Error("Erro ao buscar horários");
     const data = await res.json();
     // Ajusta o formato do horário para "HH:MM"
-    return data.map((h: any) => ({
+    return data.map((h: Horario) => ({
         weekDay: h.weekDay,
         time: h.time.slice(0, 5), // "08:00:00" -> "08:00"
         available: h.available,
