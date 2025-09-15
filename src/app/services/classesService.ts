@@ -6,11 +6,9 @@ export type Aula = {
 };
 
 export async function fetchAulas(): Promise<Aula[]> {
-  // TODO Colocar URL em variável de ambiente
-  const res = await fetch("http://localhost:3000/api/v1/classes", {
-    // TODO Colocar token em variável de ambiente
+  const res = await fetch(`${process.env.GOOGLE_CLIENT_ID}/api/v1/classes`, {
     headers: {
-      "X-Admin-Token": "meu-super-token-123",
+      "X-Admin-Token": `${process.env.ADMIN_TOKEN}`,
     },
     cache: "no-store",
   });

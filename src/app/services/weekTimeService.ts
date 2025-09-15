@@ -5,9 +5,9 @@ export type Horario = {
 };
 
 export async function fetchHorarios(): Promise<Horario[]> {
-    const res = await fetch("http://localhost:3000/api/v1/week-time", {
+    const res = await fetch(`${process.env.GOOGLE_CLIENT_ID}/api/v1/week-time`, {
         headers: {
-            "X-Admin-Token": "meu-super-token-123",
+            "X-Admin-Token": `${process.env.ADMIN_TOKEN}`,
         },
         cache: "no-store",
     });

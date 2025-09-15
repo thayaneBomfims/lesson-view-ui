@@ -1,7 +1,7 @@
 export async function fetchStudent(email: string): Promise<any> {
-    const res = await fetch(`http://localhost:3000/api/v1/students?email=${email}`, {
+    const res = await fetch(`${process.env.GOOGLE_CLIENT_ID}/api/v1/students?email=${email}`, {
         headers: {
-            "X-Admin-Token": "meu-super-token-123",
+            "X-Admin-Token": `${process.env.ADMIN_TOKEN}`,
         },
         cache: "no-store",
     });
@@ -12,9 +12,9 @@ export async function fetchStudent(email: string): Promise<any> {
 }
 
 export async function fetchStudentById(user_id: string): Promise<any> {
-    const res = await fetch(`http://localhost:3000/api/v1/students/${user_id}`, {
+    const res = await fetch(`${process.env.GOOGLE_CLIENT_ID}/api/v1/students/${user_id}`, {
         headers: {
-            "X-Admin-Token": "meu-super-token-123",
+            "X-Admin-Token": `${process.env.ADMIN_TOKEN}`,
         },
         cache: "no-store",
     });
@@ -25,10 +25,10 @@ export async function fetchStudentById(user_id: string): Promise<any> {
 }
 
 export async function updateStudentGoogleCode(user_id: string, googleCode: string) {
-    const res = await fetch(`http://localhost:3000/api/v1/students/${user_id}`, {
+    const res = await fetch(`${process.env.GOOGLE_CLIENT_ID}/api/v1/students/${user_id}`, {
         method: "PATCH",
         headers: {
-            "X-Admin-Token": "meu-super-token-123",
+            "X-Admin-Token": `${process.env.ADMIN_TOKEN}`,
             "Content-Type": "application/json",
         },
         body: JSON.stringify({ googleCode }),
